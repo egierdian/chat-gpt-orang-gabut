@@ -5,6 +5,14 @@
   max-height: 100vh;
 }
 
+.Chat-container::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+.App::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
 
 /* inputan */
 .Chat-container {
@@ -15,8 +23,9 @@
   position: fixed;
   transform: translate(-50%);
   width: 100%;
-  text-align: right;
   padding: 15px;
+  display: grid;
+  gap: 10px; /* Jarak antara input dan button */
 }
 .Chat-wrapper {
   /* max-height: 75vh; */
@@ -49,35 +58,34 @@
   line-height: 1.5;
   border: solid 1px rgba(0,0,0,.15);
   padding: 15px 10px;
-  font-size: 18px;
-  width: 100%;
-}
-
-.Chat-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 14px;
 }
 
 .Chat-creator-web {
   margin: 0;
   color: #B3C8CF;
+  font-size: 12px;
+  text-align: center;
 }
 
 .Chat-btn-send {
-  padding: 10px 25px;
-  font-size: 16px;
+  padding: 15px 25px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
   border: none;
   background: #1679AB;
   color: #fff;
   border-radius: 5px;
-  margin: 10px;
-  margin-right: -20px !important;
+  /* margin: 10px; */
   cursor: pointer;
 }
 
+@media (max-width: 575px){
+  .App, .Chat-container {
+    max-width: 450px;
+  }
+}
 @media (min-width: 576px){
   .App, .Chat-container {
     max-width: 540px;

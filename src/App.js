@@ -70,12 +70,10 @@ const App = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <div className="Chat-footer">
-          <p className="Chat-creator-web">@ {year} By orang Gabut!</p>
-          <button className="Chat-btn-send" onClick={search}>
-            SEND
-          </button>
-        </div>
+        <button className="Chat-btn-send" onClick={search}>
+          SEND
+        </button>
+        <p className="Chat-creator-web">@ {year} By orang Gabut!</p>
       </div>
     </>
   );
