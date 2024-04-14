@@ -5,15 +5,6 @@
   max-height: 100vh;
 }
 
-.Chat-container::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
-}
-.App::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
-}
-
 /* inputan */
 .Chat-container {
   /* max-height: 100vh; */
@@ -47,10 +38,10 @@
 }
 .Chat-author {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
 }
 .Chat-message {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .Chat-input {
