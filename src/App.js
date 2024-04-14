@@ -14,8 +14,13 @@ const App = () => {
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
   const [year] = useState(new Date().getFullYear());
+  const disabledBtn = false;
 
   const search = async () => {
+    if (inputValue.trim() === '') {
+      alert('Input tidak boleh kosong!');
+      return;
+    }
     // Menambahkan pesan dari pengguna
     setMessages((prevMessages) => [...prevMessages, { author: 'You', message: inputValue }]);
 
@@ -70,7 +75,11 @@ const App = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button className="Chat-btn-send" onClick={search}>
+        <button 
+          className="Chat-btn-send" 
+          onClick={search}
+          disabled={inputValue.trim() === ''} 
+        >
           SEND
         </button>
         <p className="Chat-creator-web">@ {year} By orang Gabut!</p>

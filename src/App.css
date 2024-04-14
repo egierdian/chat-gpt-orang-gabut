@@ -1,3 +1,6 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 .App {
   background: #fff;
   padding: 15px;
@@ -70,6 +73,10 @@
   border-radius: 5px;
   /* margin: 10px; */
   cursor: pointer;
+}
+.Chat-btn-send[disabled] {
+  opacity: 0.5; 
+  cursor: not-allowed; 
 }
 
 @media (max-width: 575px){
