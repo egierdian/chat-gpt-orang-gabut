@@ -14,18 +14,22 @@ const App = () => {
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
   const [year] = useState(new Date().getFullYear());
-  const disabledBtn = false;
-
+  
   const search = async () => {
     if (inputValue.trim() === '') {
       alert('Input tidak boleh kosong!');
       return;
     }
+
+    const tempInputValue = inputValue
+
+    setInputValue('') // reset pesan dari user
+
     // Menambahkan pesan dari pengguna
     setMessages((prevMessages) => [...prevMessages, { author: 'You', message: inputValue }]);
 
     // Mendapatkan balasan dari server (contoh sederhana)
-    const response = await getMessage(inputValue);
+    const response = await getMessage(tempInputValue);
 
     // Menambahkan pesan balasan dari server
     setMessages((prevMessages) => [...prevMessages, { author: 'Chat GPT', message: response }]);
@@ -36,8 +40,6 @@ const App = () => {
     // Contoh sederhana: mengembalikan pesan berdasarkan pesan dari pengguna
     const resultMessage = await getMessageFromGPT(message)
     
-    setInputValue('') // reset pesan dari user
-
     return `${resultMessage}`;
   };
 
